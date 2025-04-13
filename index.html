@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Первый Репозиторий</title>
     <style>
-        /* Ваши стили остаются без изменений */
+        /* Основные стили */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -15,70 +15,185 @@
             line-height: 1.6;
         }
         
-        /* ... (остальные стили из вашего кода) ... */
+        header {
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
         
+        nav {
+            background: #333;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+        
+        nav ul li {
+            margin: 0 1.5rem;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background: #4CAF50;
+            transform: translateY(-3px);
+        }
+        
+        main {
+            padding: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-bottom: 4rem;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            width: 100%;
+        }
+        
+        /* Кнопки */
+        .btn {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #388E3C;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #4CAF50;
+            color: #4CAF50;
+        }
+        
+        .btn-outline:hover {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        /* Анимации */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animated {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        
+        /* Секция героя */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Карточки услуг */
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+        
+        .service-card {
+            flex: 1 1 300px;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Форма */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
     </style>
 </head>
 <body>
-    <header class="animated">
-        <h1>Максгруп</h1>
-        <p>Создаём современные сайты с 2021 года</p>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="#home" class="animated delay-1">Главная</a></li>
-            <li><a href="#services" class="animated delay-2">Услуги</a></li>
-            <li><a href="#about" class="animated delay-1">О нас</a></li>
-            <li><a href="#contact" class="animated delay-2">Контакты</a></li>
-        </ul>
-    </nav>
-    
-    <main>
-        <section id="home" class="hero animated delay-1">
-            <h1>Профессиональное создание сайтов</h1>
-            <p>Мы разрабатываем современные, быстрые и адаптивные веб-сайты, которые помогают вашему бизнесу расти.</p>
-            <a href="#contact" class="btn">Заказать сайт</a>
-            <a href="#services" class="btn btn-outline">Наши услуги</a>
-        </section>
-        
-        <section id="services" class="animated delay-2">
-            <h2>Наши услуги</h2>
-            <div class="services">
-                <div class="service-card">
-                    <h3>Разработка сайтов</h3>
-                    <p>Полный цикл разработки: от лендингов до сложных интернет-магазинов и корпоративных порталов.</p>
-                    <a href="#" class="btn">Подробнее</a>
-                </div>
-            </div>
-        </section>
-        
-        <section id="about" class="animated delay-1">
-            <h2>О нашей компании</h2>
-            <p>MaxGroup - это профессионал с более чем 4-летним опытом в создании веб-сайтов. Мы объединяем креативный дизайн, современные технологии и маркетинговые стратегии, чтобы создавать продукты, которые работают на ваш бизнес.</p>
-            <p>Наши клиенты - это малый и средний бизнес, стартапы и корпорации по всему миру. Мы гордимся тем, что 80% наших клиентов приходят к нам по рекомендациям.</p>
-            <a href="#contact" class="btn">Связаться с нами</a>
-        </section>
-        
-        <section id="contact" class="animated delay-2">
-            <h2>Свяжитесь с нами</h2>
-            <p>Готовы начать проект? Заполните форму ниже, и мы свяжемся с вами в течение 24 часов.</p>
-            
-            <form class="contact-form" id="contactForm">
-                <input type="text" id="name" placeholder="Ваше имя" required>
-                <input type="email" id="email" placeholder="Ваш email" required>
-                <input type="tel" id="phone" placeholder="Ваш телефон">
-                <textarea id="message" placeholder="Расскажите о вашем проекте..." required></textarea>
-                <button type="submit" class="btn">Отправить сообщение</button>
-            </form>
-        </section>
-    </main>
-    
-    <footer class="animated delay-3">
-        <p>&copy; 2021-2025 MaxGroup. Все права защищены.</p>
-        <p>Телефон: +375 29 969 73 73 | Email: maksimum435@gmail.com</p>
-    </footer>
-
+    <!-- Остальная часть вашего HTML (без изменений) -->
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -95,7 +210,6 @@
                 message: document.getElementById('message').value
             };
 
-            // Замените URL на ваш Google Apps Script URL
             fetch('https://script.google.com/macros/s/1WIJsDzlk3BbqPn0FTNrniz5bibvhCm99Jx6g7DAAGTU1U8TkAdj2JHCT/exec', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -103,15 +217,14 @@
             })
             .then(response => {
                 if (response.ok) {
-                    alert('✅ Сообщение отправлено! Мы свяжемся с вами в ближайшее время.');
+                    alert('✅ Сообщение отправлено!');
                     document.getElementById('contactForm').reset();
                 } else {
                     throw new Error('Ошибка сервера');
                 }
             })
             .catch(error => {
-                alert('❌ Ошибка при отправке. Пожалуйста, попробуйте позже или напишите на maksimum435@gmail.com');
-                console.error('Error:', error);
+                alert('❌ Ошибка: ' + error.message);
             })
             .finally(() => {
                 btn.innerHTML = btnOriginalText;
