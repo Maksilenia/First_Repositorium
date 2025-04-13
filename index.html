@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Первый Репозиторий</title>
+    <title>Крутой сайт с анимациями</title>
     <style>
         /* Основные стили */
         body {
@@ -63,7 +63,7 @@
             padding: 2rem;
             max-width: 1000px;
             margin: 0 auto;
-            padding-bottom: 4rem;
+            padding-bottom: 4rem; /* Чтобы футер не перекрывал контент */
         }
         
         section {
@@ -87,7 +87,7 @@
             width: 100%;
         }
         
-        /* Кнопки */
+        /* Анимированные кнопки */
         .btn {
             display: inline-block;
             background: #4CAF50;
@@ -109,6 +109,11 @@
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
         }
         
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        /* Специальные стили для разных кнопок */
         .btn-outline {
             background: transparent;
             border: 2px solid #4CAF50;
@@ -171,7 +176,12 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
         
-        /* Форма */
+        .service-card h3 {
+            color: #4CAF50;
+            margin-top: 0;
+        }
+        
+        /* Форма обратной связи */
         .contact-form {
             display: flex;
             flex-direction: column;
@@ -193,44 +203,67 @@
     </style>
 </head>
 <body>
-    <!-- Остальная часть вашего HTML (без изменений) -->
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+    <header class="animated">
+        <h1>Digital Studio</h1>
+        <p>Создаём современные сайты с 2024 года</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home" class="animated delay-1">Главная</a></li>
+            <li><a href="#services" class="animated delay-2">Услуги</a></li>
+            <li><a href="#about" class="animated delay-1">О нас</a></li>
+            <li><a href="#contact" class="animated delay-2">Контакты</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="home" class="hero animated delay-1">
+            <h1>Профессиональное создание сайтов</h1>
+            <p>Мы разрабатываем современные, быстрые и адаптивные веб-сайты, которые помогают вашему бизнесу расти.</p>
+            <a href="#contact" class="btn">Заказать сайт</a>
+            <a href="#services" class="btn btn-outline">Наши услуги</a>
+        </section>
+        
+        <section id="services" class="animated delay-2">
+            <h2>Наши услуги</h2>
+            <div class="services">
+                
+                
+                <div class="service-card">
+                    <h3>Разработка сайтов</h3>
+                    <p>Полный цикл разработки: от лендингов до сложных интернет-магазинов и корпоративных порталов.</p>
+                    <a href="#" class="btn">Подробнее</a>
+                </div>
+
+                
+            </div>
+        </section>
+        
+        <section id="about" class="animated delay-1">
+            <h2>О нашей компании</h2>
+            <p>MaxGroup - это команда профессионалов с более чем 4-летним опытом в создании веб-сайтов. Мы объединяем креативный дизайн, современные технологии и маркетинговые стратегии, чтобы создавать продукты, которые работают на ваш бизнес.</p>
+            <p>Я принимаю заказы людей со всего мира (кроме Байгостана).</p>
+            <a href="#contact" class="btn">Связаться с нами</a>
+        </section>
+        
+        <section id="contact" class="animated delay-2">
+            <h2>Свяжитесь с нами</h2>
+            <p>Готовы начать проект? Заполните форму ниже, и мы свяжемся с вами в течение 24 часов.</p>
             
-            const btn = this.querySelector('button');
-            const btnOriginalText = btn.innerHTML;
-            btn.innerHTML = 'Отправка...';
-            btn.disabled = true;
-
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                message: document.getElementById('message').value
-            };
-
-            fetch('https://script.google.com/macros/s/1WIJsDzlk3BbqPn0FTNrniz5bibvhCm99Jx6g7DAAGTU1U8TkAdj2JHCT/exec', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData)
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert('✅ Сообщение отправлено!');
-                    document.getElementById('contactForm').reset();
-                } else {
-                    throw new Error('Ошибка сервера');
-                }
-            })
-            .catch(error => {
-                alert('❌ Ошибка: ' + error.message);
-            })
-            .finally(() => {
-                btn.innerHTML = btnOriginalText;
-                btn.disabled = false;
-            });
-        });
-    </script>
+            <form class="contact-form">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="email" placeholder="Ваш email" required>
+                <input type="tel" placeholder="Ваш телефон">
+                <textarea placeholder="Расскажите о вашем проекте..." required></textarea>
+                <button type="submit" class="btn">Отправить сообщение</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer class="animated delay-3">
+        <p>&copy; 2021-2025 MaxGroup. Все права защищены.</p>
+        <p>Телефон: +375333078498 | Email: maksimum435@gmail.com</p>
+    </footer>
 </body>
 </html>
